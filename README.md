@@ -1,6 +1,6 @@
 # CodeWars Challenges
 <img src="https://www.codewars.com/users/manuelbarreiro9/badges/large" alt="codeWars"/>
-A repository filled with codewars challenges (kata). Currently Ranked #### on the global leaderboard, Completed over ### challenges and Push 5 solutions every week.
+A repository filled with codewars challenges (kata). My goal is to push a minimum of 5 solutions every week.
 
 ## How It's Made:
 
