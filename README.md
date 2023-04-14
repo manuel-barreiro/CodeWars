@@ -1,4 +1,5 @@
 # CodeWars Challenges
+<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/>
 A repository filled with codewars challenges (kata). Currently Ranked #### on the global leaderboard, Completed over ### challenges and Push 5 solutions every week.
 
 ## How It's Made:
