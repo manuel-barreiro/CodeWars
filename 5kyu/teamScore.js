@@ -38,70 +38,54 @@
 
 
 function computeRanks(number, games) {
-    function computeRanks(number, games) {
-  
-  let todosLosEquipos = {}
-    
-  for (let team = 0; team < number; team++){
-    let teamPoints = 0
-    let teamGD = 0
-    let golesAFavor = 0
-    let golesEnContra = 0
-    
-    for (let game of games) {
-    
-      if (team === game[0] || team === game[1]){
-
-          let teamPos = game.indexOf(team)
-          let teamGoalsIndex = teamPos + 2
-          let teamGoals = game[teamGoalsIndex]
-          let rivalGoalsIndex = 0
-          
-          console.log(teamGoalsIndex)
-          
-          if (teamGoalsIndex === 2){
-              rivalGoalsIndex = 3
-          }
-          
-          else {
-              rivalGoalsIndex = 2
-          }
-          
-          console.log(rivalGoalsIndex)
-          
-          let rivalGoals = game[rivalGoalsIndex]
-
-          golesAFavor = golesAFavor + teamGoals
-
-          golesEnContra = golesEnContra + rivalGoals
-
-          teamGD = golesAFavor - golesEnContra
-
-          if (teamGoals > rivalGoals){
-              teamPoints = teamPoints + 2
-          }
-          else if (teamGoals === rivalGoals) {
-              teamPoints = teamPoints + 1
-          }
-
-      }
-
-    }
-    
-    let equipo = {
-      puntos: teamPoints,
-      gd: teamGD,
-      gf: golesAFavor,
-      gc: golesEnContra
-    }
-    
-    todosLosEquipos[`${team}`] = equipo
-    
+  // Step 1: Create an array of objects to store team information
+  let teams = [];
+  for (let i = 0; i < number; i++) {
+    teams.push({ team_number: i, points: 0, goal_diff: 0, goals_scored: 0 });
   }
-  
-  return todosLosEquipos
-  
-//   falta generar el array q es output
-  
-}
+
+  // Step 2: Update team information based on the games
+  for (let game of games) {
+    let [teamA, teamB, goalA, goalB] = game;
+    teams[teamA].goals_scored += goalA;
+    teams[teamA].goal_diff += goalA - goalB;
+    teams[teamB].goals_scored += goalB;
+    teams[teamB].goal_diff += goalB - goalA;
+
+    if (goalA > goalB) {
+      teams[teamA].points += 2; // Team A wins
+    } else if (goalA < goalB) {
+      teams[teamB].points += 2; // Team B wins
+    } else {
+      teams[teamA].points += 1; // Draw
+      teams[teamB].points += 1;
+    }
+  }
+
+  // Step 3: Sort the teams based on criteria
+  teams.sort((a, b) => {
+    if (a.points !== b.points) {
+      return b.points - a.points; // Sort by points (descending)
+    } else if (a.goal_diff !== b.goal_diff) {
+      return b.goal_diff - a.goal_diff; // Sort by goal difference (descending)
+    } else {
+      return b.goals_scored - a.goals_scored; // Sort by goals scored (descending)
+    }
+  });
+
+  // Step 4: Assign positions based on ranking
+  let positions = [];
+  let rank = 1;
+  let prevTeam = teams[0];
+  for (let i = 0; i < number; i++) {
+    let team = teams[i];
+    if (i > 0 && (team.points !== prevTeam.points || team.goal_diff !== prevTeam.goal_diff || team.goals_scored !== prevTeam.goals_scored)) {
+      rank = i + 1;
+    }
+    positions[team.team_number] = rank;
+    prevTeam = team;
+  }
+
+  // Step 5: Return the positions array
+  return positions;
 }
