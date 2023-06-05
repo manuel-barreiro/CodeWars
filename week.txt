@@ -1,0 +1,13 @@
+Tuesday:
+7kyu https://www.codewars.com/kata/63f96036b15a210058300ca9
+6kyu https://www.codewars.com/kata/635b8fa500fba2bef9189473
+Wednesday:
+7kyu https://www.codewars.com/kata/5c06a930717256064b0001ab
+6kyu https://www.codewars.com/kata/61eeb6e7577f050037b17a2d
+Thursday: 
+7kyu https://www.codewars.com/kata/5e2c7639b5d728001489d910
+6kyu https://www.codewars.com/kata/6210fb7aabf047000f3a3ad6
+Friday: 
+7kyu https://www.codewars.com/kata/5c511d8877c0070e2c195faf
+6kyu https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8
+
