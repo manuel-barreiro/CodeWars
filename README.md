@@ -6,7 +6,7 @@ A repository filled with codewars challenges (kata). My goal is to push a minimu
 
 **Tech used:** JavaScript
 
-Everyday, the first thing I do is solve a Codewar!
+Everyday, the first thing I do is solve a Codewar
 
 ## Optimizations
 
