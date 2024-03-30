@@ -4,7 +4,7 @@ A repository filled with codewars challenges (kata). My goal is to push a minimu
 
 ## How It's Made:
 
-**Tech used:** JavaScript
+**Tech used:** JavaScript.
 
 Everyday, the first thing I do is solve a Codewar
 
